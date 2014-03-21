@@ -7,6 +7,15 @@ A django app to apply jQuery UI tab view to translated modeltranslation fields.
 
 Use the following command: <b><i>pip install twentytab-tab-translation</i></b>
 
+## Configuration
+
+- Static files
+
+Run collectstatic command or map static directory. If you use uWSGI you can map static files:
+
+```ini
+static-map = /static/tab_translation/=%(path_to_site_packages)/tab_translation/static/tab_translation
+```
 
 ## Usage
 - translation.py
