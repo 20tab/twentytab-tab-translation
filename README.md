@@ -11,11 +11,7 @@ Use the following command: <b><i>pip install twentytab-tab-translation</i></b>
 
 - Static files
 
-Run collectstatic command or map static directory. If you use uWSGI you can map static files:
-
-```ini
-static-map = /static/tab_translation/=%(path_to_site_packages)/tab_translation/static/tab_translation
-```
+Run collectstatic command or map static directory. 
 
 ## Usage
 - translation.py
