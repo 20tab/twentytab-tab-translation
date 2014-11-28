@@ -21,7 +21,6 @@ class TransAdmin(TranslationAdmin):
                         fieldset = [lang[1].replace(' ', '_')]
                         fields = []
                         for f in fs[1]['fields']:
-                            print f
                             if len(f) == 1:
                                 fields.append(tuple(["%s_%s" % (f[0], lang[0].replace("-", "_"))]))
                             else:
