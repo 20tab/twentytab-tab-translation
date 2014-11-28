@@ -4,7 +4,7 @@ jQuery(function(){
     $('fieldset.translatable h2').hide();
 
     $('fieldset.translatable').not('.inline-group fieldset.translatable').each(function(){
-        tabs += "<li><a href='#tab_"+$(this).find('h2').text()+"'>"+$(this).find('h2').text()+"</a></li>";
+        tabs += "<li><a href='#tab_"+$(this).find('h2').text()+"'>"+$(this).find('h2').text().replace('_', ' ')+"</a></li>";
         $(this).attr('id',"tab_"+$(this).find('h2').text());
     });
     tabs += "</ul>";
@@ -20,7 +20,7 @@ jQuery(function(){
                 var index_counter = $(this).attr('id').split('-');
                 var id_dom = index_counter[0];
                 $(this).children('fieldset.translatable').each(function(){
-                    inline_tabs += "<li><a href='#tab_"+$(this).find('h2').text()+id_dom+"-"+index+"'>"+$(this).find('h2').text()+"</a></li>";
+                    inline_tabs += "<li><a href='#tab_"+$(this).find('h2').text()+id_dom+"-"+index+"'>"+$(this).find('h2').text().replace('_', ' ')+"</a></li>";
                     $(this).attr('id',"tab_"+$(this).find('h2').text()+id_dom+"-"+index);
                 });
 

@@ -18,9 +18,10 @@ class TransAdmin(TranslationAdmin):
             for fs in self.fieldsets:
                 if 'classes' in fs[1].keys() and 'trans-fieldset' in fs[1]['classes']:
                     for lang in settings.LANGUAGES:
-                        fieldset = [lang[1]]
+                        fieldset = [lang[1].replace(' ', '_')]
                         fields = []
                         for f in fs[1]['fields']:
+                            print f
                             if len(f) == 1:
                                 fields.append(tuple(["%s_%s" % (f[0], lang[0].replace("-", "_"))]))
                             else:
@@ -100,7 +101,7 @@ class TransInlineModelAdmin(TranslationBaseModelAdmin, InlineModelAdmin):
             for fs in self.fieldsets:
                 if 'classes' in fs[1].keys() and 'trans-fieldset' in fs[1]['classes']:
                     for lang in settings.LANGUAGES:
-                        fieldset = [lang[1]]
+                        fieldset = [lang[1].replace(' ', '_')]
                         fields = []
                         for f in fs[1]['fields']:
                             if len(f) == 1:

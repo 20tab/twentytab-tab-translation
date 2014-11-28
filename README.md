@@ -11,7 +11,7 @@ Use the following command: <b><i>pip install twentytab-tab-translation</i></b>
 
 - Static files
 
-Run collectstatic command or map static directory. 
+Run collectstatic command or map static directory.
 
 ## Usage
 - translation.py
