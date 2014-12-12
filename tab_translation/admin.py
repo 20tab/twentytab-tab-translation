@@ -83,14 +83,14 @@ class TransInlineModelAdmin(TranslationBaseModelAdmin, InlineModelAdmin):
         self.tab_patch_fieldsets()
 
     def get_formset(self, request, obj=None, **kwargs):
-        kwargs = self._do_get_form_or_formset(request, obj, **kwargs)
+        kwargs = self._get_form_or_formset(request, obj, **kwargs)
         return super(TransInlineModelAdmin, self).get_formset(request, obj, **kwargs)
 
     def get_fieldsets(self, request, obj=None):
         if self.declared_fieldsets:
-            return self._do_get_fieldsets_pre_form_or_formset()
+            return self._get_fieldsets_pre_form_or_formset()
         form = self.get_formset(request, obj).form
-        fieldsets = self._do_get_fieldsets_post_form_or_formset(request, form, obj)
+        fieldsets = self._get_fieldsets_post_form_or_formset(request, form, obj)
         return fieldsets
 
     def tab_patch_fieldsets(self):
